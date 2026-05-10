@@ -1,0 +1,149 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Montserrat Font Import */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('https://resource-static.bj.bcebos.com/fonts/Montserrat-VariableFont_wght.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Minimal Aesthetic Design System - Traveloop */
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    
+    /* Minimal Theme - Light Mode */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 9%;
+    
+    /* Travel-inspired accent color - soft teal */
+    --primary: 180 65% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 220 14% 97%;
+    --secondary-foreground: 220 13% 9%;
+    
+    --muted: 220 14% 97%;
+    --muted-foreground: 220 9% 46%;
+    
+    --accent: 220 14% 97%;
+    --accent-foreground: 220 13% 9%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 180 65% 45%;
+    
+    /* Chart colors - travel themed */
+    --chart-1: 180 65% 45%;
+    --chart-2: 200 80% 50%;
+    --chart-3: 280 60% 55%;
+    --chart-4: 30 85% 55%;
+    --chart-5: 340 70% 55%;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 13% 9%;
+    --sidebar-primary: 180 65% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 97%;
+    --sidebar-accent-foreground: 220 13% 9%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 180 65% 45%;
+    
+    /* Minimal shadows */
+    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+    --shadow-hover: 0 4px 12px 0 rgb(0 0 0 / 0.08);
+  }
+
+  .dark {
+    /* Dark Mode - Minimal */
+    --background: 222 47% 6%;
+    --foreground: 220 13% 91%;
+    
+    --card: 222 47% 8%;
+    --card-foreground: 220 13% 91%;
+    
+    --popover: 222 47% 8%;
+    --popover-foreground: 220 13% 91%;
+    
+    --primary: 180 65% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 220 13% 91%;
+    
+    --muted: 222 47% 11%;
+    --muted-foreground: 220 9% 62%;
+    
+    --accent: 222 47% 11%;
+    --accent-foreground: 220 13% 91%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 222 47% 15%;
+    --input: 222 47% 15%;
+    --ring: 180 65% 50%;
+    
+    --chart-1: 180 65% 50%;
+    --chart-2: 200 80% 55%;
+    --chart-3: 280 60% 60%;
+    --chart-4: 30 85% 60%;
+    --chart-5: 340 70% 60%;
+    
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 220 13% 91%;
+    --sidebar-primary: 180 65% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 11%;
+    --sidebar-accent-foreground: 220 13% 91%;
+    --sidebar-border: 222 47% 15%;
+    --sidebar-ring: 180 65% 50%;
+    
+    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.3);
+    --shadow-hover: 0 4px 12px 0 rgb(0 0 0 / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  body {
+    @apply bg-background text-foreground font-montserrat;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-balance;
+  }
+  
+  p {
+    @apply text-pretty;
+  }
+}
