@@ -5,8 +5,16 @@ import AuthLayout from '@/layouts/AuthLayout';
 import MainLayout from '@/layouts/MainLayout';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 
-const LoginPage = lazy(() => import('@/pages/auth/LoginPage'));
-const SignupPage = lazy(() => import('@/pages/auth/SignupPage'));
+const LoginPage = lazy(() =>
+  import('@/pages/auth/LoginPage').then((module) => ({
+    default: module.LoginPage,
+  }))
+);
+const SignupPage = lazy(() =>
+  import('@/pages/auth/SignupPage').then((module) => ({
+    default: module.SignupPage,
+  }))
+);
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const MyTripsPage = lazy(() => import('@/pages/MyTripsPage'));
 const CityDiscoveryPage = lazy(() => import('@/pages/CityDiscoveryPage'));

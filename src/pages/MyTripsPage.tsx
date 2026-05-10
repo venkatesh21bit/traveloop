@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Plus, Search, Filter } from 'lucide-react';
@@ -16,10 +17,11 @@ import TripCard from '@/components/common/TripCard';
 import EmptyState from '@/components/common/EmptyState';
 import { TripCardSkeleton } from '@/components/common/LoadingSkeleton';
 import { useTripStore } from '@/store/tripStore';
+import type { Trip } from '@/types/types';
 import { mockTrips } from '@/data/mockData';
 
 export default function MyTripsPage() {
-  const { trips, setTrips, filters, setFilters, sortOptions, setSortOptions, getFilteredTrips } = useTripStore();
+  const { setTrips, filters, setFilters, setSortOptions, getFilteredTrips } = useTripStore();
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -39,7 +41,7 @@ export default function MyTripsPage() {
   const handleStatusFilter = (value: string) => {
     setFilters({
       ...filters,
-      status: value === 'all' ? undefined : (value as any),
+      status: value === 'all' ? undefined : (value as Trip['status']),
     });
   };
 
@@ -85,7 +87,7 @@ export default function MyTripsPage() {
               type="search"
               placeholder="Search trips..."
               value={searchQuery}
-              onChange={(e) => handleSearch(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => handleSearch(e.target.value)}
               className="pl-10 rounded-xl"
             />
           </div>
@@ -133,7 +135,7 @@ export default function MyTripsPage() {
             </div>
           ) : filteredTrips.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredTrips.map((trip) => (
+              {filteredTrips.map((trip: Trip) => (
                 <TripCard key={trip.id} trip={trip} />
               ))}
             </div>

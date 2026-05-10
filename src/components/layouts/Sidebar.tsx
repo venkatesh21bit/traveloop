@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'motion/react';
 import {
   LayoutDashboard,
   Map,

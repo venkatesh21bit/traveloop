@@ -1,30 +1,22 @@
-{
-  "include": [
-    "./src"
-  ],
-  "exclude": [
-    "./src/**/*.test.ts",
-    "./src/**/*.spec.ts",
-    "./src/components/ui"
-  ],
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "target": "ES2020",
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "strictNullChecks": true,
-    "noEmit": true,
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
-  }
-}
+const config = {
+  include: ["./src"],
+  exclude: ["./src/**/*.test.ts", "./src/**/*.spec.ts"],
+  compilerOptions: {
+    jsx: "react-jsx",
+    moduleResolution: "bundler",
+    allowImportingTsExtensions: true,
+    baseUrl: ".",
+    ignoreDeprecations: "6.0",
+    target: "ES2020",
+    lib: ["ES2020", "DOM", "DOM.Iterable"],
+    module: "ESNext",
+    skipLibCheck: true,
+    strictNullChecks: true,
+    noEmit: true,
+    paths: {
+      "@/*": ["src/*"],
+    },
+  },
+} as const
+
+export default config

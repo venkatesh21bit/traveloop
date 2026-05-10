@@ -104,7 +104,7 @@ export default function ActivityCard({ activity, onAdd, compact = false }: Activ
 
         {activity.tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
-            {activity.tags.slice(0, 3).map((tag) => (
+            {activity.tags.slice(0, 3).map((tag: string) => (
               <Badge key={tag} variant="secondary" className="text-xs">
                 {tag}
               </Badge>

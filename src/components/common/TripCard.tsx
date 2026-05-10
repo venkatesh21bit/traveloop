@@ -19,7 +19,7 @@ interface TripCardProps {
   onShare?: (trip: Trip) => void;
 }
 
-const statusColors = {
+const statusColors: Record<Trip["status"], string> = {
   draft: 'bg-muted text-muted-foreground',
   planned: 'bg-primary/10 text-primary',
   ongoing: 'bg-chart-4/10 text-chart-4',
